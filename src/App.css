@@ -17,10 +17,10 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5em;
+  padding: 1.5em 0;
+  margin: 0 0.5em;
   box-sizing: border-box;
   border-bottom: solid 1px rgb(233, 226, 226);
-  width: 100%;
 }
 .navcontainer{
   display: flex;
@@ -36,62 +36,35 @@ h2{
   font-size: 2rem;
   font-weight: 700;
   display: inline-flex;
-  padding-left: 0.5em;
 }
 ul{
   list-style: none;
   display: flex;
+  padding: 0;
 }
-li{
-  padding: 1em;
-}
+
 li:hover{
-  background-color: hsl(223, 64%, 98%);
+  background-color: hsl(25, 100%, 94%);
+  cursor: pointer;
 }
 nav li{
   font-weight: lighter;
+  color: gray;
+  margin: 0.25em 0 0 2em;
+}
+.icons {
+  text-align: right;
 }
 .avatar{
   width: 40px;
   height: 40px;
+  margin: 0 0 0 2em;
 }
-.icons li:first-child{
-  margin-top: 0.75em;
+.icons img:first-child{
+  padding-bottom: 0.5em;
 }
-
-/* h2{
-  font-size: 2rem;
-  padding-right: 1em;
-  font-weight: 700;
-}
-ul{
-  padding: 0;
-  list-style: none;
-  display: flex;
-}
-li{
-  padding: 0.75em 1em;
-}
-li:hover{
-  background-color: hsl(223, 64%, 98%);
-}
-.navbar{
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-}
-.navbar li{
-  font-weight: lighter;
-}
-.menubar{
-  display: none;
-}
-.avatar{
-  width: 40px;
-  height: 40px;
-}
-.icons li:first-child{
-  margin-top: 0.75em;
+img:hover{
+  transform: scale(1.2);
 }
 
 
@@ -99,8 +72,9 @@ li:hover{
   .menu{
     display: none;
   }
-  .header{
+  header{
     padding: 1em;
+    margin: 0;
   }
   .menubar, h2{
     display: inline-block;
@@ -108,20 +82,35 @@ li:hover{
   .menubar{
     margin-right: 1em;
   }
+  .avatar{
+    width: 30px;
+    height: 30px;
+  }
+  .icons{
+    padding-top: 0.25em;
+  }
+  .icons img:first-child{
+    padding-bottom: 0.25em;
+  }
   .mobilemenu{
     display: list-item;
     position: fixed;
-    width: 40%;
-    margin-top: 4.3em;
-    background: hsl(25, 100%, 94%);
+    width: 150px;
+    margin-top: 2.25em;
+    background: hsl(25, 82%, 89%);
     height: 100%;
     left: 0;
     box-shadow: 0 0 5px hsla(24, 64%, 89%, 0.386);
     z-index: 1;
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease-in;
   }
   .mobilemenu.active {
     transform: translateX(0);
+  } 
+  nav li{
+    padding: 1em ;
+    margin: 0;
+    color: black;
   }
-} */
+} 

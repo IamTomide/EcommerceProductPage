@@ -6,7 +6,7 @@ const Menubar = ({open}) => {
     return ( 
         <>
             <ul className={`mobilemenu ${open ? "active" : ""}`}>
-                <li>Collections</li>
+                <li><a href="http://"></a>Collections</li>
                 <li>Men</li>
                 <li>Women</li>
                 <li>About</li>

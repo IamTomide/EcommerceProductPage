@@ -26,39 +26,11 @@ function AppHeader() {
           </nav>          
         </div>
         
-        <ul className="icons">
-          <li><img src={iconcart} alt="cart"  /></li>
-          <li><img src={avatar} alt="img" className='avatar'/></li>
-        </ul>
-        {/* <div className=''>
-          <div className="main">
-            <img src={iconmenu} alt="" className="menubar" onClick={() => setOpen(!open)} />
-            <h2>sneakers</h2>
-          </div>
-          <img src={iconmenu} alt="" className="menubar" onClick={() => setOpen(!open)} />
-          <h2>sneakers</h2>
-          <nav>
-            <Menubar open={open}/>
-          </nav>
-        </div> */}
-          {/* <ul className="icons">
-            <li><img src={iconcart} alt="cart"  /></li>
-            <li><img src={avatar} alt="img" className='avatar'/></li>
-          </ul> */}
+        <div className="icons">
+          <img src={iconcart} alt="cart"  />
+          <img src={avatar} alt="img" className='avatar'/>
+        </div>
       </header>
-      {/* <div className="header">
-        <nav className="navbar">
-          <div className='menudiv'>
-            <img src={iconmenu} alt="" className="menubar" onClick={() => setOpen(!open)} />
-            <h2>sneakers</h2>
-          </div>
-          <Menubar open={open}/>
-        </nav>
-        <ul className="icons">
-          <li><img src={iconcart} alt="cart"  /></li>
-          <li><img src={avatar} alt="img" className='avatar'/></li>
-        </ul>
-      </div> */}
     </>
   )
 }
