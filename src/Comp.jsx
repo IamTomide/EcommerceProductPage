@@ -1,7 +1,7 @@
 import './AppHeader'
 import AppHeader from './AppHeader'
 import './index.css'
-import Menubar from './menubar'
+import Product from './Product'
 
 function Comp() {
 
@@ -9,6 +9,7 @@ function Comp() {
         <>
         <div className="main">
             <AppHeader/>
+            <Product />
         </div>
         </>
     )

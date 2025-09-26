@@ -10,7 +10,6 @@ import { useState } from 'react'
 
 function AppHeader() {
   const [open, setOpen] = useState(false);
-  console.log("header" + open);
 
   return (
     <>
@@ -22,13 +21,14 @@ function AppHeader() {
             <h2>sneakers</h2>
           </div>
           <nav>
-            <Menubar open={open}/>
+            {open && <div className="overlay"></div>}
+            <Menubar open={open} setOpen={setOpen}/>
           </nav>          
         </div>
         
         <div className="icons">
-          <img src={iconcart} alt="cart"  />
-          <img src={avatar} alt="img" className='avatar'/>
+          <img src={iconcart} alt="cart"  className='cart'/>
+          <img src={avatar} alt="avatar" className='avatar'/>
         </div>
       </header>
     </>
