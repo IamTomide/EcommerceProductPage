@@ -35,7 +35,6 @@ h2 {
 ul{
   list-style: none;
   display: flex;
-  /* padding: 0; */
 }
 li{
   border-bottom: solid 4px transparent;
@@ -44,7 +43,7 @@ li{
 li:hover{
   border-bottom: solid 4px hsla(26, 100%, 55%, 0.766);
   color: rgba(0, 0, 0, 0.714);
-  text-transform: scale(1.1);
+  transform: scaleY(1.1);
   cursor: pointer;
 }
 nav li{

@@ -1,11 +1,10 @@
-// import { useState } from 'react'
 import './App.css'
 import Menubar from './menubar'
 import iconmenu from './assets/icon-menu.svg'
 import iconcart from './assets/icon-cart.svg'
 import avatar from './assets/image-avatar.png'
+import logo from './assets/logo.svg'
 import { useState } from 'react'
-// import { Link } from 'react-router-dom'
 
 
 function AppHeader() {
@@ -18,7 +17,7 @@ function AppHeader() {
         <div className="navcontainer">
           <div className='navmenu'>
             <img src={iconmenu} alt="" className="menubar" onClick={() => setOpen(!open)} />
-            <h2>sneakers</h2>
+            <img src={logo} alt="logo" />
           </div>
           <nav>
             {open && <div className="overlay"></div>}

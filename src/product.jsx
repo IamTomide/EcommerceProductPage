@@ -54,9 +54,9 @@ const Product = () => {
 
                 <div className="cartactions">
                     <div className='qtydetail'>
-                        <span className="imgoverlay"><img src={iconminus} onClick={() => {changeQty(-1)}}></img></span>
+                        <span className="imgoverlay" onClick={() => {changeQty(-1)}}><img src={iconminus}></img></span>
                         <span className="quantity">{qty}</span>
-                        <span className="imgoverlay"><img src={iconplus} onClick={() => {changeQty(1)}}></img></span>
+                        <span className="imgoverlay" onClick={() => {changeQty(1)}}><img src={iconplus}></img></span>
                     </div>
                     <button className='addtocart'><img src={iconcart} alt="cart" className='carticon'/>Add to cart</button>
                 </div>                    
