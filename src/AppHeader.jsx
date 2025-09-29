@@ -1,9 +1,10 @@
 import './App.css'
-import Menubar from './menubar'
-import iconmenu from './assets/icon-menu.svg'
-import iconcart from './assets/icon-cart.svg'
+import Menubar from './Menubar'
+import MenuIcon from './assets/icon-menu.svg?react';
+import IconCart from './assets/icon-cart.svg?react'
+import Logo from './assets/logo.svg?react'
 import avatar from './assets/image-avatar.png'
-import logo from './assets/logo.svg'
+
 import { useState } from 'react'
 
 
@@ -16,8 +17,8 @@ function AppHeader() {
 
         <div className="navcontainer">
           <div className='navmenu'>
-            <img src={iconmenu} alt="" className="menubar" onClick={() => setOpen(!open)} />
-            <img src={logo} alt="logo" />
+            <MenuIcon className="menubar" onClick={() => setOpen(!open)} />
+            <Logo />
           </div>
           <nav>
             {open && <div className="overlay"></div>}
@@ -26,7 +27,7 @@ function AppHeader() {
         </div>
         
         <div className="icons">
-          <img src={iconcart} alt="cart"  className='cart'/>
+          <IconCart className="cart"/>
           <img src={avatar} alt="avatar" className='avatar'/>
         </div>
       </header>

@@ -3,9 +3,9 @@ import image1thumbnail from './assets/image-product-1-thumbnail.jpg'
 import image2 from './assets/image-product-2-thumbnail.jpg'
 import image3 from './assets/image-product-3-thumbnail.jpg'
 import image4 from './assets/image-product-4-thumbnail.jpg'
-import iconcart from './assets/icon-cart.svg'
-import iconplus from './assets/icon-plus.svg'
-import iconminus from './assets/icon-minus.svg'
+import IconCart from './assets/icon-cart.svg?react'
+import IconPlus from './assets/icon-plus.svg?react'
+import IconMinus from './assets/icon-minus.svg?react'
 import { useState } from 'react'
 
 const Product = () => {
@@ -54,11 +54,11 @@ const Product = () => {
 
                 <div className="cartactions">
                     <div className='qtydetail'>
-                        <span className="imgoverlay" onClick={() => {changeQty(-1)}}><img src={iconminus}></img></span>
+                        <IconMinus className="actionicon" onClick={() => {changeQty(-1)}}/>
                         <span className="quantity">{qty}</span>
-                        <span className="imgoverlay" onClick={() => {changeQty(1)}}><img src={iconplus}></img></span>
+                        <IconPlus className="actionicon" onClick={() => {changeQty(1)}}/>
                     </div>
-                    <button className='addtocart'><img src={iconcart} alt="cart" className='carticon'/>Add to cart</button>
+                    <button className='addtocart'><IconCart className="carticon"/>Add to cart</button>
                 </div>                    
                
             </section>

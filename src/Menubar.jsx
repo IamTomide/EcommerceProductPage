@@ -1,12 +1,13 @@
 import './App.css'
-import iconclose from './assets/icon-close.svg'
+import IconClose from './assets/icon-close.svg?react'
 
 const Menubar = ({open, setOpen}) => {
+    console.log(IconClose);
 
     return ( 
         <>
             <ul className={`mobilemenu ${open ? "active" : ""}`}>
-                {open && <img src={iconclose} className='closeicon' onClick={() => setOpen(false)}/>}
+                {open && <IconClose className='closeicon' onClick={() => setOpen(false)} />}
                 <li><a href="http://"></a>Collections</li>
                 <li>Men</li>
                 <li>Women</li>
