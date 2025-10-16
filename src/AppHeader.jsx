@@ -1,4 +1,4 @@
-import './App.css'
+import './appheader.css'
 import Menubar from './Menubar'
 import MenuIcon from './assets/icon-menu.svg?react';
 import IconCart from './assets/icon-cart.svg?react'
@@ -16,7 +16,7 @@ function AppHeader() {
       <header>
 
         <div className="navcontainer">
-          <div className='navmenu'>
+          <div>
             <MenuIcon className="menubar" onClick={() => setOpen(!open)} />
             <Logo />
           </div>

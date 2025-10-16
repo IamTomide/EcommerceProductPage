@@ -1,0 +1,141 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2em 0.5em;
+  box-sizing: border-box;
+  border-bottom: solid 1px rgb(233, 226, 226);
+}
+.navcontainer{
+  display: flex;
+  align-items: center;
+}
+.menubar{
+  display: none;
+}
+ul{
+  list-style: none;
+  display: flex;
+  padding: 0;
+  padding-left: 1em;
+}
+li{
+  border-bottom: solid 4px transparent;
+  padding: 1.7em 0.5em;
+  color: gray;
+  margin: 0.25em 0 0 1em;
+}
+li:hover{
+  border-bottom: solid 4px hsla(26, 100%, 55%, 0.766);
+  color: rgba(0, 0, 0, 0.714);
+  transform: scaleY(1.1);
+  cursor: pointer;
+}
+.icons {
+  text-align: right;
+}
+.cart{
+  margin-bottom: 0.2em;
+}
+.avatar{
+  width: 30px;
+  height: 30px;
+  margin: 0 0 0 2em;
+  
+}
+.cart:hover{
+  transform: scale(1.1);
+}
+.cart:hover path{
+  fill: black;
+}
+.avatar:hover{
+  border-radius: 50%;
+  border: solid 2px hsla(26, 100%, 55%, 0.766);
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.675); 
+  z-index: 2; 
+  opacity: 0; 
+}
+.closeicon{
+  opacity: 0;
+}
+
+@media (width >= 560px) and (width <= 700px){
+  header{
+    font-size-adjust: 0.35;
+  }
+  .avatar {
+    width: 20%;
+    height: 20%;
+  }
+  li{
+    padding: 2em 0em;
+  }
+}
+
+@media (max-width:560px){
+   .menu{
+    display: none;
+  }
+  header{
+    padding: 1em;
+    margin: 0;
+  }
+  .menubar, h2{
+    display: inline-block;
+  }
+  .menubar{
+    margin-right: 1em;
+  }
+  .avatar{
+    width: 30px;
+    height: 30px;
+  }
+  .icons{
+    padding-top: 0.25em;
+  }
+  .icons img:first-child{
+    padding-bottom: 0.25em;
+  }
+  .mobilemenu{
+    display: list-item;
+    position: fixed;
+    top: 0;
+    width: 250px;
+    padding: 1em 0 1em 1em;
+    background: #fff;
+    height: 100%;
+    left: 0;
+    box-shadow: 0 0 5px hsla(24, 64%, 89%, 0.386);
+    z-index: 10;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in;
+  }
+  .mobilemenu.active {
+    transform: translateX(0);
+  }
+  nav li{
+    padding: 0.5em 0;
+    color: rgb(71, 70, 70);
+    font-weight: bold;
+  }
+  nav li:hover{
+    border: none;
+    color: grey;
+    border-right: solid 4px hsla(26, 100%, 55%, 0.766);;
+  }
+  .closeicon {
+    opacity: 1;
+    margin: 1em 1em 2em;
+  }
+  .closeicon:hover path{
+    fill: hsl(26, 100%, 55%);
+  }
+}
+

@@ -1,8 +1,7 @@
-import './App.css'
+import './appheader.css'
 import IconClose from './assets/icon-close.svg?react'
 
 const Menubar = ({open, setOpen}) => {
-    console.log(IconClose);
 
     return ( 
         <>
