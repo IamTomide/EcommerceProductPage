@@ -13,7 +13,7 @@ function AppHeader() {
 
   return (
     <>
-      <header>
+      <header className='mainstyle'>
 
         <div className="navcontainer">
           <div>

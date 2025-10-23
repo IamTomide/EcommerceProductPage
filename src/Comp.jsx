@@ -7,7 +7,7 @@ function Comp() {
 
     return (
         <>
-        <div className="main">
+        <div>
             <AppHeader/>
             <Product />
         </div>
