@@ -28,19 +28,20 @@ const Product = () => {
     const [lightboxStartIndex, setLightboxStartIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const [isLightbox, setIsLightbox] = useState(false);
-    // const [cartQty, setCartQty] = useState(0);
     const [cartItems, setCartItems] = useState([]);
 
     const changeQty = (amount) => {
         setQty((prev) => Math.max(0, prev + amount));
     };
 
+    
+
     const products = [
         {
             company: "SNEAKER COMPANY",
             name: "Fall Limited Edition Sneakers",
             desc: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
-            Price: "$125.00",
+            Price: 125.00,
             bonus: 50
         }
 
@@ -93,7 +94,7 @@ const Product = () => {
 
     return (  
         <>
-        <AppHeader cartItems={cartItems}/>
+        <AppHeader cartItems={cartItems} setCartItems={setCartItems}/>
         <div className='mainstyle'>
             <main>
                 <section className="prodgallery">
@@ -138,7 +139,7 @@ const Product = () => {
                     <h2>{products[0].name}</h2>
                     <p>{products[0].desc}</p>
                     <div className="flexprice">
-                        <h3>{products[0].Price} <span className="bonus">{products[0].bonus}%</span></h3>
+                        <h3>${products[0].Price.toFixed(2)} <span className="bonus">{products[0].bonus}%</span></h3>
                         <p className='price'>$250.00</p>
                     </div>
                     
@@ -149,7 +150,7 @@ const Product = () => {
                             <span className="quantity">{qty}</span>
                             <IconPlus className="actionicon" onClick={() => {changeQty(1)}}/>
                         </div>
-                        <button className='addtocart' onClick={() => {}}><IconCart className="carticon"/><span>Add to cart</span></button>
+                        <button className='addtocart' onClick={() => {setCartItems((prevItems) => [...prevItems, {name: products[0].name, price: products[0].Price.toFixed(2), qty: qty}]); console.log(cartItems)}}><IconCart className="carticon"/><span>Add to cart</span></button>
                     </div>                    
                 
                 </section>
