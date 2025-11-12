@@ -1,9 +1,12 @@
-import './appheader.css'
+import './appheader.css';
+import './Product.jsx';
 import Menubar from './Menubar'
 import MenuIcon from './assets/icon-menu.svg?react';
 import IconCart from './assets/icon-cart.svg?react'
+import IconDelete from './assets/icon-delete.svg?react'
 import Logo from './assets/logo.svg?react'
 import avatar from './assets/image-avatar.png'
+
 
 import { useState } from 'react'
 

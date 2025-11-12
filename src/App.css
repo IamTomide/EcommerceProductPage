@@ -2,8 +2,9 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 6em auto;
-    width: 90%;
+    margin: 5em auto;
+    width: 80%;
+    position: relative;
 }
 .prodgallery {
   width: 45%;
@@ -60,7 +61,7 @@ h2 {
   font-weight: 700;
 }
 .prodinfo{
-  flex-basis: 45%;
+  flex-basis: 43%;
   width: 100%;
 }
 .prodinfo h1, .prodinfo p{
@@ -70,7 +71,7 @@ h2 {
   font-size: 16px;
 }
 .prodinfo p:first-of-type{
-  margin: 1.5em 0 1em;
+  margin: 0 0 1em;
 }
 .prodinfo h1{
   letter-spacing: 2px;
@@ -79,6 +80,12 @@ h2 {
   padding-top: 0;
   font-weight: bold;
   text-decoration: line-through;
+}
+p .price{
+  margin: 0;
+}
+.flexprice{
+  margin: 0;
 }
 .cartactions{
   display: flex;
@@ -107,7 +114,7 @@ h2 {
   border-radius: 10px;
   padding: 1em;
   background-color: hsl(26, 100%, 55%);
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: bold;
   
 }
@@ -271,6 +278,11 @@ h2 {
 .lightbox .swiper-button-prev:hover svg {
   fill: hsl(26, 100%, 55%);
 }
+.lb-prev:hover::after,
+.lb-next:hover::after {
+  border-color: orange;
+}
+
 @media (width >= 560px) and (width <= 700px){
   .prodinfo{
     font-size-adjust: 0.4;
@@ -327,5 +339,10 @@ h2 {
   margin-top: 1em;
   margin-bottom: 4em;
   box-shadow: 2px 20px 20px hsl(25, 100%, 90%);
+  }
+  .flexprice{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2em;
   }
 } 

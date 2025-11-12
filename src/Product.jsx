@@ -19,6 +19,7 @@ import image3thumb from './assets/image-product-3-thumbnail.jpg'
 import image4thumb from './assets/image-product-4-thumbnail.jpg'
 import './index.css'
 import './App.css'
+import AppHeader from './AppHeader'
 
 const Product = () => {
     const [qty, setQty] = useState(1);
@@ -27,6 +28,8 @@ const Product = () => {
     const [lightboxStartIndex, setLightboxStartIndex] = useState(0);
     const [isMobile, setIsMobile] = useState(false);
     const [isLightbox, setIsLightbox] = useState(false);
+    // const [cartQty, setCartQty] = useState(0);
+    const [cartItems, setCartItems] = useState([]);
 
     const changeQty = (amount) => {
         setQty((prev) => Math.max(0, prev + amount));
@@ -37,7 +40,7 @@ const Product = () => {
             company: "SNEAKER COMPANY",
             name: "Fall Limited Edition Sneakers",
             desc: "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer.",
-            Price: "$250.00",
+            Price: "$125.00",
             bonus: 50
         }
 
@@ -90,6 +93,7 @@ const Product = () => {
 
     return (  
         <>
+        <AppHeader cartItems={cartItems}/>
         <div className='mainstyle'>
             <main>
                 <section className="prodgallery">
@@ -101,7 +105,7 @@ const Product = () => {
                         thumbs={isMobile ? undefined : { swiper: thumbsSwiper }}
                         >
                             {images.map((image, index)=> {
-                                return <SwiperSlide key={index}><img src={image} alt="product image" className="prod" onDoubleClick={() => {
+                                return <SwiperSlide key={index}><img src={image} alt="product image" className="prod" onClick={() => {
                                     if (isMobile) {
                                         setIsLightbox(false);
                                     } else {
@@ -133,8 +137,11 @@ const Product = () => {
                     <h1>{products[0].company}</h1> 
                     <h2>{products[0].name}</h2>
                     <p>{products[0].desc}</p>
-                    <h3>{products[0].Price} <span className="bonus">{products[0].bonus}%</span></h3>
-                    <p className='price'>$250.00</p>
+                    <div className="flexprice">
+                        <h3>{products[0].Price} <span className="bonus">{products[0].bonus}%</span></h3>
+                        <p className='price'>$250.00</p>
+                    </div>
+                    
 
                     <div className="cartactions">
                         <div className='qtydetail'>
@@ -142,7 +149,7 @@ const Product = () => {
                             <span className="quantity">{qty}</span>
                             <IconPlus className="actionicon" onClick={() => {changeQty(1)}}/>
                         </div>
-                        <button className='addtocart'><IconCart className="carticon"/><span>Add to cart</span></button>
+                        <button className='addtocart' onClick={() => {}}><IconCart className="carticon"/><span>Add to cart</span></button>
                     </div>                    
                 
                 </section>
