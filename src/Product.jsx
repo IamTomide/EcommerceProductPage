@@ -150,7 +150,7 @@ const Product = () => {
                             <span className="quantity">{qty}</span>
                             <IconPlus className="actionicon" onClick={() => {changeQty(1)}}/>
                         </div>
-                        <button className='addtocart' onClick={() => {setCartItems((prevItems) => [...prevItems, {name: products[0].name, price: products[0].Price.toFixed(2), qty: qty}]); console.log(cartItems)}}><IconCart className="carticon"/><span>Add to cart</span></button>
+                        <button className='addtocart' onClick={() => {setCartItems((prevItems) => [...prevItems, {name: products[0].name, price: products[0].Price.toFixed(2), qty: qty}])}}><IconCart className="carticon"/><span>Add to cart</span></button>
                     </div>                    
                 
                 </section>

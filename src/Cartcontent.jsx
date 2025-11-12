@@ -4,7 +4,6 @@ import IconDelete from './assets/icon-delete.svg?react'
 
 
 const Cartcontent = ({ cartItems, setCartItems }) => {
-    console.log(cartItems);
 
     return ( 
         <div className="cart-dropdown">
