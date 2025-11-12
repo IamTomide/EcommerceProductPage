@@ -7,7 +7,7 @@ const Menubar = ({open, setOpen}) => {
         <>
             <ul className={`mobilemenu ${open ? "active" : ""}`}>
                 {open && <IconClose className='closeicon' onClick={() => setOpen(false)} />}
-                <li><a href="http://"></a>Collections</li>
+                <li>Collections</li>
                 <li>Men</li>
                 <li>Women</li>
                 <li>About</li>
