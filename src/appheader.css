@@ -33,15 +33,16 @@ li:hover{
   cursor: pointer;
 }
 .icons {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
-.cart{
-  margin-bottom: 0.2em;
+.cartdiv{
+  margin-top: 0.4em;
 }
 .avatar{
   width: 30px;
   height: 30px;
-  margin: 0 0 0 2em;
+  margin: 0 0 0 1.5em;
   
 }
 .cart:hover{
@@ -135,6 +136,19 @@ h4{
   margin-left: 0.5em;
   font-weight: bold;
   color: black;
+}.cartdiv{
+  position: relative;
+}
+.cartdiv span{
+  position: absolute;
+  font-size: 0.7rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  top: -6px;
+  background-color: #FF7D1A;
+  right: -8px;
+  padding: 0 7px;
+  border-radius: 5px;
 }
 @media (min-width: 701px) and (max-width: 1300px){
   .cart-dropdown{

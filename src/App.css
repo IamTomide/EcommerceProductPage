@@ -171,7 +171,7 @@ p .price{
 }
 .lb-overlay{
   position: fixed;
-  top: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.767); 
@@ -185,7 +185,18 @@ p .price{
   height: auto;
   z-index: 10;
   position: relative;
-  overflow: visible;
+  transform-origin: bottom right; 
+  animation: flipIn 0.5s ease forwards;
+}
+@keyframes flipIn {
+  from {
+    transform: perspective(800px) rotateX(70deg) rotateY(-20deg) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(800px) rotateX(0) rotateY(0) scale(1);
+    opacity: 1;
+  }
 }
 .lb-content .swiper {
   overflow: visible !important; 
@@ -346,3 +357,5 @@ p .price{
     padding-top: 2em;
   }
 } 
+
+

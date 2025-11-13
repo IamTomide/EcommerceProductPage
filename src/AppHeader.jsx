@@ -31,7 +31,10 @@ function AppHeader({ cartItems, setCartItems }) {
         </div>
         
         <div className="icons">
-          <IconCart className="cart" onClick={() => setCartOpen(!cartOpen)}/>
+          <div className="cartdiv">
+            <IconCart className="cart" onClick={() => setCartOpen(!cartOpen)}/>
+            {(!cartItems || cartItems.length !== 0) ? (<span>{cartItems.reduce((sum, it) => sum + (it.qty ?? it.quantity ?? 0), 0)}</span>) : (null)}
+          </div>
           <img src={avatar} alt="avatar" className='avatar'/>
         </div>
 

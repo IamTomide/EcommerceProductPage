@@ -3,12 +3,13 @@ import IconPlus from './assets/icon-plus.svg?react'
 import IconMinus from './assets/icon-minus.svg?react'
 import IconClose from './assets/icon-close.svg?react'
 import { useState,useEffect } from 'react'
-import { Navigation, Thumbs } from 'swiper/modules';
+import { Navigation, Thumbs, EffectFlip } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/effect-flip';
 import image1 from './assets/image-product-1.jpg'
 import image2 from './assets/image-product-2.jpg'
 import image3 from './assets/image-product-3.jpg'
@@ -61,7 +62,22 @@ const Product = () => {
             image4
         ];
 
-        useEffect(() => {
+    const handleaddition = (name, qty) => {
+        const itemexists = cartItems.some(item => item.name === name)
+        if (!itemexists) {
+            setCartItems(prev => [...prev, {name: products[0].name, price: products[0].Price.toFixed(2), qty: qty}])
+        } else {
+             setCartItems(prev =>
+                prev.map(item =>
+                item.name === name
+                ? { ...item, qty: qty } 
+                : item
+            )
+    );
+        }
+    }
+
+    useEffect(() => {
             if (window.innerWidth <= 560) {
                 setIsMobile(true);
             }
@@ -150,7 +166,7 @@ const Product = () => {
                             <span className="quantity">{qty}</span>
                             <IconPlus className="actionicon" onClick={() => {changeQty(1)}}/>
                         </div>
-                        <button className='addtocart' onClick={() => {setCartItems((prevItems) => [...prevItems, {name: products[0].name, price: products[0].Price.toFixed(2), qty: qty}])}}><IconCart className="carticon"/><span>Add to cart</span></button>
+                        <button className='addtocart' onClick={() => handleaddition(products[0].name, qty)}><IconCart className="carticon"/><span>Add to cart</span></button>
                     </div>                    
                 
                 </section>
@@ -168,9 +184,10 @@ const Product = () => {
 
                     <div className="lb-viewport">
                         <Swiper
-                            modules={[Navigation, Thumbs]}
+                            modules={[Navigation, Thumbs, EffectFlip]}
                             spaceBetween={50}
                             slidesPerView={1}
+                            effect={'flip'}
                             initialSlide={lightboxStartIndex}
                             key={isLightbox ? `lb-open-${lightboxStartIndex}` : 'lb-closed'}
                             navigation={{ prevEl: '.lb-prev', nextEl: '.lb-next' }}
