@@ -1,0 +1,135 @@
+.lightbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  z-index: 100;
+  margin-top: 2em;
+}
+.lb-overlay{
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.767); 
+  z-index: 1; 
+  opacity: 1;
+}
+.lb-content{
+  width: 35%;
+  min-width: 550px;
+  max-width: 70px;
+  height: auto;
+  z-index: 10;
+  position: relative;
+  transform-origin: bottom right; 
+  animation: flipIn 0.5s ease forwards;
+}
+@keyframes flipIn {
+  from {
+    transform: perspective(800px) rotateX(70deg) rotateY(-20deg) scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: perspective(800px) rotateX(0) rotateY(0) scale(1);
+    opacity: 1;
+  }
+}
+.lb-content .swiper {
+  overflow: visible !important; 
+}
+.lb-viewport{
+  position: relative;
+  overflow: hidden;
+}
+
+.lb-prev, .lb-next{
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+}
+
+.lb-prev{
+  left: -24px;
+}
+
+.lb-next{
+  right: -24px;
+}
+
+.lb-prev::after, .lb-next::after{
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+}
+
+.lb-prev::after{
+  transform: rotate(-135deg);
+}
+
+.lb-next::after{
+  transform: rotate(45deg);
+}
+.lb-prod{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+} 
+.lb-thumbnail{
+  padding: 0 2em;
+  width: 100%;
+  margin: 2em 0;
+  overflow: visible !important;
+}
+.lb-thumbnailwrapper{
+  border-radius: 12px;
+  overflow: visible !important;
+}
+.lb-imgthumbnail{
+  display: block;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.lb-close{
+  position: absolute;
+  top: -50px;
+  right: 2px;
+  margin: 1em 0;
+  z-index: 140;
+}
+.lb-close:hover path{
+  fill: hsl(26, 100%, 55%);
+}
+.lightbox .swiper-button-prev {
+  left: -20px !important;
+}
+.lightbox .swiper-button-next {
+  right: -20px !important;
+}
+.lightbox .swiper-button-next:hover svg,
+.lightbox .swiper-button-prev:hover svg {
+  fill: hsl(26, 100%, 55%);
+}
+.lb-prev:hover::after,
+.lb-next:hover::after {
+  border-color: orange;
+}
